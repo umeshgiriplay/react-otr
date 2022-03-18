@@ -1,0 +1,13 @@
+.s-alert-box {
+    min-width: 250px;
+}
+
+.s-alert-close::before, .s-alert-close::after {
+    width: 2px;
+}
+.app-content{
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    align-content: center;
+}
