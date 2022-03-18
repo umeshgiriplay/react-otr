@@ -8,14 +8,14 @@ class AppHeader extends Component {
             <header className="app-header">
                 <div className="container">
                     <div className="app-branding">
-                        <Link to="/" className="app-title">Online Ticket Reservation System</Link>
+                        <Link to={this.props.authenticated ?'/home':'/login'} className="app-title">Online Ticket Reservation System</Link>
                     </div>
                     <div className="app-options">
                         <nav className="app-nav">
                             {this.props.authenticated ? (
                                 <ul>
                                     <li>
-                                        <NavLink to="/">Dashboard</NavLink>
+                                        <NavLink to="/home">Dashboard</NavLink>
                                     </li>
                                     <li>
                                         <NavLink to="/tickets">Tickets</NavLink>

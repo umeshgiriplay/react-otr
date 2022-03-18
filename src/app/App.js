@@ -56,6 +56,7 @@ class App extends Component {
             currentUser: null
         });
         Alert.success("You're safely logged out!");
+        window.location = '/login';
     }
 
     componentDidMount() {
@@ -71,7 +72,6 @@ class App extends Component {
                 <div>
                     <div className="app">
                         <div className="app-top-box">
-                            {window.location.pathname ? '' : ''}
                             <AppHeader authenticated={this.state.authenticated} onLogout={this.handleLogout}/>
                         </div>
                         <div className="app-body">
@@ -84,7 +84,8 @@ class App extends Component {
                             </div>
                             <div className="app-content">
                                 <Switch>
-                                    <Route exact path="/" component={Home}></Route>
+                                    <Route exact path="/" component={Login}></Route>
+                                    <Route exact path="/home" component={Home}></Route>
                                     <Route exact path="/tickets" component={Tickets}></Route>
 
 

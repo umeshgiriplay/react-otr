@@ -85,7 +85,7 @@ class Tickets extends Component {
                                     <TableCell component="th" scope="row">
                                         {ticket.paymentDone ?
                                             <Button disabled>PAID</Button> :
-                                            <Button onClick={event => this.makePayment(ticket.id)}>PAY</Button>
+                                            <Button className='btn-success' onClick={event => this.makePayment(ticket.id)}>PAY</Button>
                                         }
                                     </TableCell>
                                 </TableRow>

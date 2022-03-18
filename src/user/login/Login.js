@@ -26,7 +26,7 @@ class Login extends Component {
         if (this.props.authenticated) {
             return <Redirect
                 to={{
-                    pathname: "/",
+                    pathname: "/home",
                     state: {from: this.props.location}
                 }}/>;
         }
@@ -35,9 +35,6 @@ class Login extends Component {
             <div className="login-container">
                 <div className="login-content">
                     <h1 className="login-title">Login to Online Ticket Reservation System</h1>
-                    <div className="or-separator">
-                        <span className="or-text">OR</span>
-                    </div>
                     <LoginForm {...this.props} />
                 </div>
             </div>
@@ -78,7 +75,7 @@ class LoginForm extends Component {
             .then(response => {
                 localStorage.setItem(ACCESS_TOKEN, response.accessToken);
                 Alert.success("You're successfully logged in!");
-                this.props.history.push("/");
+                this.props.history.push("/home");
                 window.location.reload();
             }).catch(error => {
             Alert.error((error && error.message) || 'Oops! Something went wrong. Please try again!');
